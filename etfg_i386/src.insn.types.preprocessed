@@ -11,8 +11,21 @@ ENTRY:
 4 : bvextract(1, 2, 3) : BV:8
 5 : 24 : INT
 6 : bvzero_ext(4, 5) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = zext i8 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 7 : INT
+3 : 0 : INT
+4 : bvextract(1, 2, 3) : BV:8
+5 : 24 : INT
+6 : bvzero_ext(4, 5) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -37,8 +50,21 @@ ENTRY:
 4 : bvextract(1, 2, 3) : BV:2
 5 : 30 : INT
 6 : bvzero_ext(4, 5) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = zext i2 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 1 : INT
+3 : 0 : INT
+4 : bvextract(1, 2, 3) : BV:2
+5 : 30 : INT
+6 : bvzero_ext(4, 5) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -63,8 +89,21 @@ ENTRY:
 4 : bvextract(1, 2, 3) : BV:16
 5 : 16 : INT
 6 : bvzero_ext(4, 5) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = zext i16 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 15 : INT
+3 : 0 : INT
+4 : bvextract(1, 2, 3) : BV:16
+5 : 16 : INT
+6 : bvzero_ext(4, 5) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -91,8 +130,23 @@ ENTRY:
 6 : bool_to_bv(5) : BV:1
 7 : 31 : INT
 8 : bvzero_ext(6, 7) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = zext i1 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 0 : INT
+3 : bvextract(1, 2, 2) : BV:1
+4 : 1 : BV:1
+5 : eq(3, 4) : BOOL
+6 : bool_to_bv(5) : BV:1
+7 : 31 : INT
+8 : bvzero_ext(6, 7) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -124,8 +178,28 @@ ENTRY:
 11 : xor(9, 10) : BOOL
 12 : bool_to_bv(11) : BV:1
 13 : bvconcat(4, 12) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = xor i1 %a0, true
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 0 : INT
+7 : bvextract(5, 6, 6) : BV:1
+8 : 1 : BV:1
+9 : eq(7, 8) : BOOL
+10 : 1 : BOOL
+11 : xor(9, 10) : BOOL
+12 : bool_to_bv(11) : BV:1
+13 : bvconcat(4, 12) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -159,8 +233,30 @@ ENTRY:
 13 : xor(9, 12) : BOOL
 14 : bool_to_bv(13) : BV:1
 15 : bvconcat(4, 14) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = xor i1 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 0 : INT
+7 : bvextract(5, 6, 6) : BV:1
+8 : 1 : BV:1
+9 : eq(7, 8) : BOOL
+10 : input.src.exreg.0.2 : BV:32
+11 : bvextract(10, 6, 6) : BV:1
+12 : eq(11, 8) : BOOL
+13 : xor(9, 12) : BOOL
+14 : bool_to_bv(13) : BV:1
+15 : bvconcat(4, 14) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -198,8 +294,18 @@ A
 1 : input.src.exreg.0.2 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvurem(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = urem i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : input.src.exreg.0.2 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvurem(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -237,8 +343,18 @@ A
 1 : input.src.exreg.0.1 : BV:32
 2 : const.0 : BV:32
 3 : bvurem(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = urem i32 %a0, 1234
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 1234 : BV:32
+3 : bvurem(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -276,8 +392,18 @@ A
 1 : input.src.exreg.0.2 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvudiv(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = udiv i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : input.src.exreg.0.2 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvudiv(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -315,8 +441,18 @@ A
 1 : input.src.exreg.0.1 : BV:32
 2 : const.0 : BV:32
 3 : bvudiv(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = udiv i32 %a0, 1234
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 1234 : BV:32
+3 : bvudiv(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -344,8 +480,23 @@ ENTRY:
 6 : input.src.exreg.0.2 : BV:32
 7 : input.src.exreg.0.3 : BV:32
 8 : ite(5, 6, 7) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = select i1 %a0, i32 %a1, i32 %a2
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 0 : INT
+3 : bvextract(1, 2, 2) : BV:1
+4 : 1 : BV:1
+5 : eq(3, 4) : BOOL
+6 : input.src.exreg.0.2 : BV:32
+7 : input.src.exreg.0.3 : BV:32
+8 : ite(5, 6, 7) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -369,8 +520,18 @@ ENTRY:
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.2 : BV:32
 3 : bvsub(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = sub i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.2 : BV:32
+3 : bvsub(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -397,8 +558,22 @@ ENTRY:
 5 : 4 : INT
 6 : 0 : BOOL
 7 : store(1, 2, 3, 4, 5, 6) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: store i32 %a0, i32* %a1, align 1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+2 : mlvar.llvm.store4.0 : MEMLABEL
+3 : input.src.exreg.0.0 : BV:32
+4 : input.src.exreg.0.1 : BV:32
+5 : 4 : INT
+6 : 0 : BOOL
+7 : store(1, 2, 3, 4, 5, 6) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -431,8 +606,25 @@ ENTRY:
 8 : 2 : INT
 9 : 0 : BOOL
 10 : store(1, 2, 3, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: store i16 %a0, i16* %a1, align 1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+2 : mlvar.llvm.store2.0 : MEMLABEL
+3 : input.src.exreg.0.0 : BV:32
+4 : input.src.exreg.0.1 : BV:32
+5 : 15 : INT
+6 : 0 : INT
+7 : bvextract(4, 5, 6) : BV:16
+8 : 2 : INT
+9 : 0 : BOOL
+10 : store(1, 2, 3, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -463,8 +655,25 @@ ENTRY:
 8 : 1 : INT
 9 : 0 : BOOL
 10 : store(1, 2, 3, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: store i8 %a0, i8* %a1, align 1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+2 : mlvar.llvm.store1.0 : MEMLABEL
+3 : input.src.exreg.0.0 : BV:32
+4 : input.src.exreg.0.1 : BV:32
+5 : 7 : INT
+6 : 0 : INT
+7 : bvextract(4, 5, 6) : BV:8
+8 : 1 : INT
+9 : 0 : BOOL
+10 : store(1, 2, 3, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -521,8 +730,18 @@ A
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvsrem(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = srem i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.2
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvsrem(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -579,8 +798,18 @@ A
 1 : input.src.exreg.0.0 : BV:32
 2 : const.0 : BV:32
 3 : bvsrem(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = srem i32 %a0, 1234
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : input.src.exreg.0.0 : BV:32
+2 : 1234 : BV:32
+3 : bvsrem(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -617,8 +846,18 @@ A
 1 : const.0 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvshl(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = shl i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : 1234 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvshl(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -655,8 +894,18 @@ A
 1 : input.src.exreg.0.2 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvshl(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = shl i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : input.src.exreg.0.2 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvshl(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -682,8 +931,21 @@ ENTRY:
 4 : bvextract(1, 2, 3) : BV:8
 5 : 24 : INT
 6 : bvsign_ext(4, 5) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = sext i8 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 7 : INT
+3 : 0 : INT
+4 : bvextract(1, 2, 3) : BV:8
+5 : 24 : INT
+6 : bvsign_ext(4, 5) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -708,8 +970,21 @@ ENTRY:
 4 : bvextract(1, 2, 3) : BV:2
 5 : 30 : INT
 6 : bvsign_ext(4, 5) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = sext i2 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 1 : INT
+3 : 0 : INT
+4 : bvextract(1, 2, 3) : BV:2
+5 : 30 : INT
+6 : bvsign_ext(4, 5) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -734,8 +1009,21 @@ ENTRY:
 4 : bvextract(1, 2, 3) : BV:16
 5 : 16 : INT
 6 : bvsign_ext(4, 5) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = sext i16 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 15 : INT
+3 : 0 : INT
+4 : bvextract(1, 2, 3) : BV:16
+5 : 16 : INT
+6 : bvsign_ext(4, 5) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -762,8 +1050,23 @@ ENTRY:
 6 : bool_to_bv(5) : BV:1
 7 : 31 : INT
 8 : bvsign_ext(6, 7) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = sext i1 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 0 : INT
+3 : bvextract(1, 2, 2) : BV:1
+4 : 1 : BV:1
+5 : eq(3, 4) : BOOL
+6 : bool_to_bv(5) : BV:1
+7 : 31 : INT
+8 : bvsign_ext(6, 7) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -819,8 +1122,18 @@ A
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvsdiv(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = sdiv i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.2
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvsdiv(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -877,8 +1190,18 @@ A
 1 : input.src.exreg.0.0 : BV:32
 2 : const.0 : BV:32
 3 : bvsdiv(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = sdiv i32 %a0, 1234
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : input.src.exreg.0.0 : BV:32
+2 : 1234 : BV:32
+3 : bvsdiv(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -911,8 +1234,28 @@ ENTRY:
 9 : bvxor(7, 8) : BV:32
 =src.llvm-indir_tgt
 1 : retaddr_const : BV:32
-=tfg_edge.te_comment
-0:0:0:1: ret i32 %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => E0%0%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.2.0
+1 : input.src.exreg.0.0 : BV:32
+=src.exreg.3.0
+1 : input.src.exreg.3.0 : BV:32
+2 : input.src.exreg.1.0 : BV:32
+3 : bvxor(1, 2) : BV:32
+4 : input.src.exreg.1.1 : BV:32
+5 : bvxor(3, 4) : BV:32
+6 : input.src.exreg.1.2 : BV:32
+7 : bvxor(5, 6) : BV:32
+8 : input.src.exreg.1.3 : BV:32
+9 : bvxor(7, 8) : BV:32
+=src.llvm-indir_tgt
+1 : retaddr_const : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => E0%0%1)
 =comment
 ret1:1
 --
@@ -936,8 +1279,26 @@ ENTRY:
 9 : bvxor(7, 8) : BV:32
 =src.llvm-indir_tgt
 1 : retaddr_const : BV:32
-=tfg_edge.te_comment
-0:0:0:1: ret void
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => E0%0%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.3.0
+1 : input.src.exreg.3.0 : BV:32
+2 : input.src.exreg.1.0 : BV:32
+3 : bvxor(1, 2) : BV:32
+4 : input.src.exreg.1.1 : BV:32
+5 : bvxor(3, 4) : BV:32
+6 : input.src.exreg.1.2 : BV:32
+7 : bvxor(5, 6) : BV:32
+8 : input.src.exreg.1.3 : BV:32
+9 : bvxor(7, 8) : BV:32
+=src.llvm-indir_tgt
+1 : retaddr_const : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => E0%0%1)
 =comment
 ret0:1
 --
@@ -965,8 +1326,30 @@ ENTRY:
 13 : or(9, 12) : BOOL
 14 : bool_to_bv(13) : BV:1
 15 : bvconcat(4, 14) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = or i1 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 0 : INT
+7 : bvextract(5, 6, 6) : BV:1
+8 : 1 : BV:1
+9 : eq(7, 8) : BOOL
+10 : input.src.exreg.0.2 : BV:32
+11 : bvextract(10, 6, 6) : BV:1
+12 : eq(11, 8) : BOOL
+13 : or(9, 12) : BOOL
+14 : bool_to_bv(13) : BV:1
+15 : bvconcat(4, 14) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -989,8 +1372,18 @@ ENTRY:
 1 : const.0 : BV:32
 2 : input.src.exreg.0.1 : BV:32
 3 : bvmul(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = mul i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : 1234 : BV:32
+2 : input.src.exreg.0.1 : BV:32
+3 : bvmul(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1013,8 +1406,18 @@ ENTRY:
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.2 : BV:32
 3 : bvmul(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = mul i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.2 : BV:32
+3 : bvmul(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1035,8 +1438,16 @@ ENTRY:
 =tfg_edge.StateTo:
 =src.exreg.0.0
 1 : input.src.exreg.0.1 : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = bitcast i32 %a0 to i32
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1066,8 +1477,26 @@ ENTRY:
 9 : eq(7, 8) : BOOL
 10 : bool_to_bv(9) : BV:1
 11 : bvconcat(4, 10) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = bitcast i1 %a0 to i1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 0 : INT
+7 : bvextract(5, 6, 6) : BV:1
+8 : 1 : BV:1
+9 : eq(7, 8) : BOOL
+10 : bool_to_bv(9) : BV:1
+11 : bvconcat(4, 10) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1085,8 +1514,14 @@ ENTRY:
 =tfg_edge.EdgeCond:
 1 : 1 : BOOL
 =tfg_edge.StateTo:
-=tfg_edge.te_comment
--1:INVALID:0:-1:start_pc_edge
+=constituent_itfg_edge
+=itfg_edge: L0%0%1 => L0%1%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=itfg_edge.Comment
+=itfg_ec
+(L0%0%1 => L0%1%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1120,8 +1555,18 @@ A
 1 : input.src.exreg.0.2 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvlshr(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = lshr i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : input.src.exreg.0.2 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvlshr(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1147,8 +1592,21 @@ ENTRY:
 4 : 4 : INT
 5 : 0 : BOOL
 6 : select(1, 2, 3, 4, 5) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = load i32, i32* %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+2 : mlvar.llvm.load4.0 : MEMLABEL
+3 : input.src.exreg.0.1 : BV:32
+4 : 4 : INT
+5 : 0 : BOOL
+6 : select(1, 2, 3, 4, 5) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1182,8 +1640,26 @@ ENTRY:
 9 : 0 : BOOL
 10 : select(5, 6, 7, 8, 9) : BV:16
 11 : bvconcat(4, 10) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = load i16, i16* %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 16 : INT
+4 : bvextract(1, 2, 3) : BV:16
+5 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+6 : mlvar.llvm.load2.0 : MEMLABEL
+7 : input.src.exreg.0.1 : BV:32
+8 : 2 : INT
+9 : 0 : BOOL
+10 : select(5, 6, 7, 8, 9) : BV:16
+11 : bvconcat(4, 10) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1215,8 +1691,26 @@ ENTRY:
 9 : 0 : BOOL
 10 : select(5, 6, 7, 8, 9) : BV:8
 11 : bvconcat(4, 10) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = load i8, i8* %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 8 : INT
+4 : bvextract(1, 2, 3) : BV:24
+5 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+6 : mlvar.llvm.load1.0 : MEMLABEL
+7 : input.src.exreg.0.1 : BV:32
+8 : 1 : INT
+9 : 0 : BOOL
+10 : select(5, 6, 7, 8, 9) : BV:8
+11 : bvconcat(4, 10) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1245,8 +1739,24 @@ ENTRY:
 7 : bvult(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ult i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : 1234 : BV:32
+6 : input.src.exreg.0.1 : BV:32
+7 : bvult(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1275,8 +1785,24 @@ ENTRY:
 7 : bvult(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ult i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvult(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1305,8 +1831,24 @@ ENTRY:
 7 : bvule(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ule i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : 1234 : BV:32
+6 : input.src.exreg.0.1 : BV:32
+7 : bvule(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1335,8 +1877,24 @@ ENTRY:
 7 : bvule(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ule i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvule(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1365,8 +1923,24 @@ ENTRY:
 7 : bvugt(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ugt i32 %a0, 1234
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 1234 : BV:32
+7 : bvugt(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1395,8 +1969,24 @@ ENTRY:
 7 : bvugt(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ugt i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvugt(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1425,8 +2015,24 @@ ENTRY:
 7 : bvuge(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp uge i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : 1234 : BV:32
+6 : input.src.exreg.0.1 : BV:32
+7 : bvuge(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1455,8 +2061,24 @@ ENTRY:
 7 : bvuge(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp uge i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvuge(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1485,8 +2107,24 @@ ENTRY:
 7 : bvslt(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp slt i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : 1234 : BV:32
+6 : input.src.exreg.0.1 : BV:32
+7 : bvslt(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1515,8 +2153,24 @@ ENTRY:
 7 : bvslt(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp slt i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvslt(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1545,8 +2199,24 @@ ENTRY:
 7 : bvsle(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp sle i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : 1234 : BV:32
+6 : input.src.exreg.0.1 : BV:32
+7 : bvsle(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1575,8 +2245,24 @@ ENTRY:
 7 : bvsle(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp sle i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvsle(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1605,8 +2291,24 @@ ENTRY:
 7 : bvsgt(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp sgt i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : 1234 : BV:32
+6 : input.src.exreg.0.1 : BV:32
+7 : bvsgt(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1635,8 +2337,24 @@ ENTRY:
 7 : bvsgt(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp sgt i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvsgt(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1665,8 +2383,24 @@ ENTRY:
 7 : bvsge(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp sge i32 1234, %a0
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : 1234 : BV:32
+6 : input.src.exreg.0.1 : BV:32
+7 : bvsge(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1695,8 +2429,24 @@ ENTRY:
 7 : bvsge(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp sge i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : bvsge(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1726,8 +2476,25 @@ ENTRY:
 8 : not(7) : BOOL
 9 : bool_to_bv(8) : BV:1
 10 : bvconcat(4, 9) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ne i32 %a0, 1234
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 1234 : BV:32
+7 : eq(5, 6) : BOOL
+8 : not(7) : BOOL
+9 : bool_to_bv(8) : BV:1
+10 : bvconcat(4, 9) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1761,8 +2528,29 @@ ENTRY:
 12 : not(11) : BOOL
 13 : bool_to_bv(12) : BV:1
 14 : bvconcat(4, 13) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ne i8 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 7 : INT
+7 : 0 : INT
+8 : bvextract(5, 6, 7) : BV:8
+9 : input.src.exreg.0.2 : BV:32
+10 : bvextract(9, 6, 7) : BV:8
+11 : eq(8, 10) : BOOL
+12 : not(11) : BOOL
+13 : bool_to_bv(12) : BV:1
+14 : bvconcat(4, 13) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1792,8 +2580,25 @@ ENTRY:
 8 : not(7) : BOOL
 9 : bool_to_bv(8) : BV:1
 10 : bvconcat(4, 9) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp ne i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : eq(5, 6) : BOOL
+8 : not(7) : BOOL
+9 : bool_to_bv(8) : BV:1
+10 : bvconcat(4, 9) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1822,8 +2627,24 @@ ENTRY:
 7 : eq(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp eq i32 %a0, 1234
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 1234 : BV:32
+7 : eq(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1856,8 +2677,28 @@ ENTRY:
 11 : eq(8, 10) : BOOL
 12 : bool_to_bv(11) : BV:1
 13 : bvconcat(4, 12) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp eq i8 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 7 : INT
+7 : 0 : INT
+8 : bvextract(5, 6, 7) : BV:8
+9 : input.src.exreg.0.2 : BV:32
+10 : bvextract(9, 6, 7) : BV:8
+11 : eq(8, 10) : BOOL
+12 : bool_to_bv(11) : BV:1
+13 : bvconcat(4, 12) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1886,8 +2727,24 @@ ENTRY:
 7 : eq(5, 6) : BOOL
 8 : bool_to_bv(7) : BV:1
 9 : bvconcat(4, 8) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = icmp eq i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : input.src.exreg.0.2 : BV:32
+7 : eq(5, 6) : BOOL
+8 : bool_to_bv(7) : BV:1
+9 : bvconcat(4, 8) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -1912,8 +2769,20 @@ ENTRY:
 3 : const.0 : BV:32
 4 : bvmul(2, 3) : BV:32
 5 : bvadd(1, 4) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = getelementptr [1234 x [2345 x i8]], [1234 x [2345 x i8]]* %a0, i32 %a1, i32 %a2
+=constituent_itfg_edge
+=itfg_edge: L0%1%100003 => L0%1%100004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.2 : BV:32
+3 : 2345 : BV:32
+4 : bvmul(2, 3) : BV:32
+5 : bvadd(1, 4) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%100003 => L0%1%100004)
 =pcrel_val
 0
 =pcrel_tag
@@ -1938,8 +2807,19 @@ ENTRY:
 5 : eq(3, 4) : BOOL
 6 : not(5) : BOOL
 =tfg_edge.StateTo:
-=tfg_edge.te_comment
-0:0:0:1: br i1 %a0, label %1, label %3
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%1%100004
+=itfg_edge.EdgeCond:
+1 : input.src.exreg.0.0 : BV:32
+2 : 0 : INT
+3 : bvextract(1, 2, 2) : BV:1
+4 : 1 : BV:1
+5 : eq(3, 4) : BOOL
+6 : not(5) : BOOL
+=itfg_edge.StateTo:
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%1%100004)
 =pcrel_val
 0
 =pcrel_tag
@@ -1952,8 +2832,18 @@ tag_var
 4 : 1 : BV:1
 5 : eq(3, 4) : BOOL
 =tfg_edge.StateTo:
-=tfg_edge.te_comment
-0:0:0:1: br i1 %a0, label %1, label %3
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%1%100003
+=itfg_edge.EdgeCond:
+1 : input.src.exreg.0.0 : BV:32
+2 : 0 : INT
+3 : bvextract(1, 2, 2) : BV:1
+4 : 1 : BV:1
+5 : eq(3, 4) : BOOL
+=itfg_edge.StateTo:
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%1%100003)
 =pcrel_val
 1
 =pcrel_tag
@@ -2002,8 +2892,46 @@ ENTRY:
 13 : input.src.exreg.0.7 : BV:32
 14 : input.src.exreg.0.8 : BV:32
 15 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_8(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4, i32 %a5, i32 %a6, i32 %a7)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200011 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.8.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_8.0 : MEMLABEL
+3 : mlcall.llvm.call_r_8.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : input.src.exreg.0.6 : BV:32
+13 : input.src.exreg.0.7 : BV:32
+14 : input.src.exreg.0.8 : BV:32
+15 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) : BV:32
+=src.llvm-mem
+1 : func.call.8.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_8.0 : MEMLABEL
+3 : mlcall.llvm.call_r_8.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : input.src.exreg.0.6 : BV:32
+13 : input.src.exreg.0.7 : BV:32
+14 : input.src.exreg.0.8 : BV:32
+15 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200011 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2062,8 +2990,44 @@ ENTRY:
 12 : input.src.exreg.0.6 : BV:32
 13 : input.src.exreg.0.7 : BV:32
 14 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_7(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4, i32 %a5, i32 %a6)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200010 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.7.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_7.0 : MEMLABEL
+3 : mlcall.llvm.call_r_7.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : input.src.exreg.0.6 : BV:32
+13 : input.src.exreg.0.7 : BV:32
+14 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13) : BV:32
+=src.llvm-mem
+1 : func.call.7.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_7.0 : MEMLABEL
+3 : mlcall.llvm.call_r_7.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : input.src.exreg.0.6 : BV:32
+13 : input.src.exreg.0.7 : BV:32
+14 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200010 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2119,8 +3083,42 @@ ENTRY:
 11 : input.src.exreg.0.5 : BV:32
 12 : input.src.exreg.0.6 : BV:32
 13 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_6(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4, i32 %a5)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200009 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.6.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_6.0 : MEMLABEL
+3 : mlcall.llvm.call_r_6.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : input.src.exreg.0.6 : BV:32
+13 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) : BV:32
+=src.llvm-mem
+1 : func.call.6.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_6.0 : MEMLABEL
+3 : mlcall.llvm.call_r_6.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : input.src.exreg.0.6 : BV:32
+13 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200009 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2173,8 +3171,40 @@ ENTRY:
 10 : input.src.exreg.0.4 : BV:32
 11 : input.src.exreg.0.5 : BV:32
 12 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_5(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200008 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.5.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_5.0 : MEMLABEL
+3 : mlcall.llvm.call_r_5.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) : BV:32
+=src.llvm-mem
+1 : func.call.5.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_5.0 : MEMLABEL
+3 : mlcall.llvm.call_r_5.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : input.src.exreg.0.5 : BV:32
+12 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200008 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2224,8 +3254,38 @@ ENTRY:
 9 : input.src.exreg.0.3 : BV:32
 10 : input.src.exreg.0.4 : BV:32
 11 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_4(i32 %a0, i32 %a1, i32 %a2, i32 %a3)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200007 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.4.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_4.0 : MEMLABEL
+3 : mlcall.llvm.call_r_4.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) : BV:32
+=src.llvm-mem
+1 : func.call.4.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_4.0 : MEMLABEL
+3 : mlcall.llvm.call_r_4.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : input.src.exreg.0.4 : BV:32
+11 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200007 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2272,8 +3332,36 @@ ENTRY:
 8 : input.src.exreg.0.2 : BV:32
 9 : input.src.exreg.0.3 : BV:32
 10 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_3(i32 %a0, i32 %a1, i32 %a2)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200006 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.3.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_3.0 : MEMLABEL
+3 : mlcall.llvm.call_r_3.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9) : BV:32
+=src.llvm-mem
+1 : func.call.3.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_3.0 : MEMLABEL
+3 : mlcall.llvm.call_r_3.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : input.src.exreg.0.3 : BV:32
+10 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200006 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2317,8 +3405,34 @@ ENTRY:
 7 : input.src.exreg.0.1 : BV:32
 8 : input.src.exreg.0.2 : BV:32
 9 : function_call(1, 2, 3, 4, 5, 6, 7, 8) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_2(i32 %a0, i32 %a1)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200005 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.2.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_2.0 : MEMLABEL
+3 : mlcall.llvm.call_r_2.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : function_call(1, 2, 3, 4, 5, 6, 7, 8) : BV:32
+=src.llvm-mem
+1 : func.call.2.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_2.0 : MEMLABEL
+3 : mlcall.llvm.call_r_2.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : input.src.exreg.0.2 : BV:32
+9 : function_call(1, 2, 3, 4, 5, 6, 7, 8) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200005 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2359,8 +3473,32 @@ ENTRY:
 6 : 0 : REGID
 7 : input.src.exreg.0.1 : BV:32
 8 : function_call(1, 2, 3, 4, 5, 6, 7) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_1(i32 %a0)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200004 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.1.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32 -> BV:32]
+2 : mlcall.llvm.call_r_1.0 : MEMLABEL
+3 : mlcall.llvm.call_r_1.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : function_call(1, 2, 3, 4, 5, 6, 7) : BV:32
+=src.llvm-mem
+1 : func.call.1.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_1.0 : MEMLABEL
+3 : mlcall.llvm.call_r_1.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.1 : BV:32
+8 : function_call(1, 2, 3, 4, 5, 6, 7) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200004 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2398,8 +3536,30 @@ ENTRY:
 5 : nextpc_const.1 : BV:32
 6 : 0 : REGID
 7 : function_call(1, 2, 3, 4, 5, 6) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = call i32 @callee_r_0()
+=constituent_itfg_edge
+=itfg_edge: L0%1%200003 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : func.call.0.reg : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID -> BV:32]
+2 : mlcall.llvm.call_r_0.0 : MEMLABEL
+3 : mlcall.llvm.call_r_0.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 1 : REGID
+7 : function_call(1, 2, 3, 4, 5, 6) : BV:32
+=src.llvm-mem
+1 : func.call.0.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_r_0.0 : MEMLABEL
+3 : mlcall.llvm.call_r_0.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : function_call(1, 2, 3, 4, 5, 6) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200003 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2436,8 +3596,30 @@ ENTRY:
 13 : input.src.exreg.0.6 : BV:32
 14 : input.src.exreg.0.7 : BV:32
 15 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_8(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4, i32 %a5, i32 %a6, i32 %a7)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200011 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.8.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_8.0 : MEMLABEL
+3 : mlcall.llvm.call_8.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : input.src.exreg.0.1 : BV:32
+9 : input.src.exreg.0.2 : BV:32
+10 : input.src.exreg.0.3 : BV:32
+11 : input.src.exreg.0.4 : BV:32
+12 : input.src.exreg.0.5 : BV:32
+13 : input.src.exreg.0.6 : BV:32
+14 : input.src.exreg.0.7 : BV:32
+15 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200011 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2480,8 +3662,29 @@ ENTRY:
 12 : input.src.exreg.0.5 : BV:32
 13 : input.src.exreg.0.6 : BV:32
 14 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_7(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4, i32 %a5, i32 %a6)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200010 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.7.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_7.0 : MEMLABEL
+3 : mlcall.llvm.call_7.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : input.src.exreg.0.1 : BV:32
+9 : input.src.exreg.0.2 : BV:32
+10 : input.src.exreg.0.3 : BV:32
+11 : input.src.exreg.0.4 : BV:32
+12 : input.src.exreg.0.5 : BV:32
+13 : input.src.exreg.0.6 : BV:32
+14 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200010 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2522,8 +3725,28 @@ ENTRY:
 11 : input.src.exreg.0.4 : BV:32
 12 : input.src.exreg.0.5 : BV:32
 13 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_6(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4, i32 %a5)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200009 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.6.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_6.0 : MEMLABEL
+3 : mlcall.llvm.call_6.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : input.src.exreg.0.1 : BV:32
+9 : input.src.exreg.0.2 : BV:32
+10 : input.src.exreg.0.3 : BV:32
+11 : input.src.exreg.0.4 : BV:32
+12 : input.src.exreg.0.5 : BV:32
+13 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200009 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2562,8 +3785,27 @@ ENTRY:
 10 : input.src.exreg.0.3 : BV:32
 11 : input.src.exreg.0.4 : BV:32
 12 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_5(i32 %a0, i32 %a1, i32 %a2, i32 %a3, i32 %a4)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200008 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.5.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_5.0 : MEMLABEL
+3 : mlcall.llvm.call_5.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : input.src.exreg.0.1 : BV:32
+9 : input.src.exreg.0.2 : BV:32
+10 : input.src.exreg.0.3 : BV:32
+11 : input.src.exreg.0.4 : BV:32
+12 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200008 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2600,8 +3842,26 @@ ENTRY:
 9 : input.src.exreg.0.2 : BV:32
 10 : input.src.exreg.0.3 : BV:32
 11 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_4(i32 %a0, i32 %a1, i32 %a2, i32 %a3)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200007 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.4.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_4.0 : MEMLABEL
+3 : mlcall.llvm.call_4.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : input.src.exreg.0.1 : BV:32
+9 : input.src.exreg.0.2 : BV:32
+10 : input.src.exreg.0.3 : BV:32
+11 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200007 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2636,8 +3896,25 @@ ENTRY:
 8 : input.src.exreg.0.1 : BV:32
 9 : input.src.exreg.0.2 : BV:32
 10 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_3(i32 %a0, i32 %a1, i32 %a2)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200006 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.3.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_3.0 : MEMLABEL
+3 : mlcall.llvm.call_3.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : input.src.exreg.0.1 : BV:32
+9 : input.src.exreg.0.2 : BV:32
+10 : function_call(1, 2, 3, 4, 5, 6, 7, 8, 9) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200006 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2670,8 +3947,24 @@ ENTRY:
 7 : input.src.exreg.0.0 : BV:32
 8 : input.src.exreg.0.1 : BV:32
 9 : function_call(1, 2, 3, 4, 5, 6, 7, 8) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_2(i32 %a0, i32 %a1)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200005 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.2.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_2.0 : MEMLABEL
+3 : mlcall.llvm.call_2.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : input.src.exreg.0.1 : BV:32
+9 : function_call(1, 2, 3, 4, 5, 6, 7, 8) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200005 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2702,8 +3995,23 @@ ENTRY:
 6 : 0 : REGID
 7 : input.src.exreg.0.0 : BV:32
 8 : function_call(1, 2, 3, 4, 5, 6, 7) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_1(i32 %a0)
+=constituent_itfg_edge
+=itfg_edge: L0%1%200004 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.1.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID,BV:32 -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_1.0 : MEMLABEL
+3 : mlcall.llvm.call_1.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : input.src.exreg.0.0 : BV:32
+8 : function_call(1, 2, 3, 4, 5, 6, 7) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200004 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2732,8 +4040,22 @@ ENTRY:
 5 : nextpc_const.1 : BV:32
 6 : 0 : REGID
 7 : function_call(1, 2, 3, 4, 5, 6) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: call void @callee_0()
+=constituent_itfg_edge
+=itfg_edge: L0%1%200003 => L0%1%300004
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.llvm-mem
+1 : func.call.0.mem : FUNCTION[MEMLABEL,MEMLABEL,ARRAY[BV:32 -> BV:8],BV:32,REGID -> ARRAY[BV:32 -> BV:8]]
+2 : mlcall.llvm.call_0.0 : MEMLABEL
+3 : mlcall.llvm.call_0.1 : MEMLABEL
+4 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+5 : nextpc_const.1 : BV:32
+6 : 0 : REGID
+7 : function_call(1, 2, 3, 4, 5, 6) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%200003 => L0%1%300004)
 =pcrel_val
 0
 =pcrel_tag
@@ -2757,8 +4079,18 @@ ENTRY:
 1 : input.src.exreg.0.1 : BV:32
 2 : 4294967295 : BV:32
 3 : bvxor(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = xor i32 %a0, -1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : 4294967295 : BV:32
+3 : bvxor(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -2780,8 +4112,18 @@ ENTRY:
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.2 : BV:32
 3 : bvxor(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = xor i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.2 : BV:32
+3 : bvxor(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -2804,8 +4146,18 @@ ENTRY:
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.2 : BV:32
 3 : bvor(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = or i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.2 : BV:32
+3 : bvor(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -2828,8 +4180,18 @@ ENTRY:
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.2 : BV:32
 3 : bvand(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = and i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.2 : BV:32
+3 : bvand(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -2848,8 +4210,14 @@ ENTRY:
 =tfg_edge.EdgeCond:
 1 : 1 : BOOL
 =tfg_edge.StateTo:
-=tfg_edge.te_comment
-0:0:0:1: br label %1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%1%100003
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%1%100003)
 =pcrel_val
 0
 =pcrel_tag
@@ -2883,8 +4251,18 @@ A
 1 : input.src.exreg.0.2 : BV:32
 2 : input.src.exreg.0.0 : BV:32
 3 : bvashr(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = ashr i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.1
+1 : input.src.exreg.0.2 : BV:32
+2 : input.src.exreg.0.0 : BV:32
+3 : bvashr(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -2919,8 +4297,30 @@ ENTRY:
 13 : and(9, 12) : BOOL
 14 : bool_to_bv(13) : BV:1
 15 : bvconcat(4, 14) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = and i1 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.0 : BV:32
+2 : 31 : INT
+3 : 1 : INT
+4 : bvextract(1, 2, 3) : BV:31
+5 : input.src.exreg.0.1 : BV:32
+6 : 0 : INT
+7 : bvextract(5, 6, 6) : BV:1
+8 : 1 : BV:1
+9 : eq(7, 8) : BOOL
+10 : input.src.exreg.0.2 : BV:32
+11 : bvextract(10, 6, 6) : BV:1
+12 : eq(11, 8) : BOOL
+13 : and(9, 12) : BOOL
+14 : bool_to_bv(13) : BV:1
+15 : bvconcat(4, 14) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -2947,8 +4347,22 @@ ENTRY:
 3 : const.0 : BV:32
 4 : const.1 : BV:32
 5 : alloca(1, 2, 3, 4) : ARRAY[BV:32 -> BV:8]
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = alloca [1234 x i8], align 1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : local.0 : BV:32
+=src.llvm-mem
+1 : input.src.llvm-mem : ARRAY[BV:32 -> BV:8]
+2 : memlabel-mem-local.0.1234.0 : MEMLABEL
+3 : local.0 : BV:32
+4 : 1234 : BV:32
+5 : alloca(1, 2, 3, 4) : ARRAY[BV:32 -> BV:8]
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
@@ -2956,6 +4370,7 @@ tag_var
 =comment
 alloca:1
 --
+$C1{d}[4] : POLY(65535)c-POLY(65535)c-POLY(65535)c-POLY(65535)c
 $C0{d}[4] : POLY(65535)c-POLY(65535)c-POLY(65535)c-POLY(65535)c
 --
 exvr0.0{d}[4] : $C0{b}[1]-$C0{B}[1]-$C0{d2}[1]-$C0{d3}[1]
@@ -2970,8 +4385,18 @@ ENTRY:
 1 : input.src.exreg.0.1 : BV:32
 2 : input.src.exreg.0.2 : BV:32
 3 : bvadd(1, 2) : BV:32
-=tfg_edge.te_comment
-0:0:0:1: %trgt.0 = add i32 %a0, %a1
+=constituent_itfg_edge
+=itfg_edge: L0%1%1 => L0%2%1
+=itfg_edge.EdgeCond:
+1 : 1 : BOOL
+=itfg_edge.StateTo:
+=src.exreg.0.0
+1 : input.src.exreg.0.1 : BV:32
+2 : input.src.exreg.0.2 : BV:32
+3 : bvadd(1, 2) : BV:32
+=itfg_edge.Comment
+=itfg_ec
+(L0%1%1 => L0%2%1)
 =pcrel_val
 0
 =pcrel_tag
