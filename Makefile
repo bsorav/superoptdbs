@@ -1,5 +1,6 @@
 all: etfg_i386/src_sym_exec_db etfg_i386/src.insn.usedef.preprocessed etfg_i386/src.insn.types.preprocessed \
-     i386_i386/src_sym_exec_db i386_i386/src.insn.usedef.preprocessed i386_i386/src.insn.types.preprocessed
+     i386_i386/src_sym_exec_db i386_i386/src.insn.usedef.preprocessed i386_i386/src.insn.types.preprocessed \
+     consts_db
 
 etfg_i386/src_sym_exec_db: etfg_i386/src_sym_exec_db.bz2
 	bunzip2 -k -f etfg_i386/src_sym_exec_db.bz2
