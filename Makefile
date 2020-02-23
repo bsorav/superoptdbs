@@ -1,5 +1,5 @@
-all: etfg_i386/src_sym_exec_db etfg_i386/src.insn.usedef.preprocessed etfg_i386/src.insn.types.preprocessed \
-     i386_i386/src_sym_exec_db i386_i386/src.insn.usedef.preprocessed i386_i386/src.insn.types.preprocessed \
+all: etfg_i386/src_sym_exec_db etfg_i386/src.insn.usedef.preprocessed etfg_i386/src.insn.types.preprocessed etfg_i386/fb.trans.tab \
+     i386_i386/src_sym_exec_db i386_i386/src.insn.usedef.preprocessed i386_i386/src.insn.types.preprocessed i386_i386/fb.trans.tab \
      consts_db
 
 etfg_i386/src_sym_exec_db: etfg_i386/src_sym_exec_db.bz2
