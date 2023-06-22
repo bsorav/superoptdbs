@@ -32,5 +32,6 @@ clean:
 	      x64_x64/consts_db x64_x64/src_sym_exec_db x64_x64/src.insn.usedef.preprocessed x64_x64/src.insn.types.preprocessed x64_x64/fb.trans.tab
 
 distclean: clean
+	git clean -df
 
 .PHONY: all clean distclean
