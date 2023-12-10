@@ -25,5 +25,13 @@ all: etfg_i386/src_sym_exec_db etfg_i386/src.insn.usedef.preprocessed etfg_i386/
 	touch $@
 
 clean:
-	rm -f etfg_i386/src_sym_exec_db etfg_i386/src.insn.usedef.preprocessed etfg_i386/src.insn.types.preprocessed etfg_i386/fb.trans.tab \
-        i386_i386/consts_db i386_i386/src_sym_exec_db i386_i386/src.insn.usedef.preprocessed i386_i386/src.insn.types.preprocessed i386_i386/fb.trans.tab \
+	rm -f \
+        etfg_i386/src_sym_exec_db etfg_i386/src.insn.usedef.preprocessed etfg_i386/src.insn.types.preprocessed etfg_i386/fb.trans.tab \
+	      i386_i386/consts_db i386_i386/src_sym_exec_db i386_i386/src.insn.usedef.preprocessed i386_i386/src.insn.types.preprocessed i386_i386/fb.trans.tab \
+        etfg_x64/src_sym_exec_db etfg_x64/src.insn.usedef.preprocessed etfg_x64/src.insn.types.preprocessed etfg_x64/fb.trans.tab \
+	      x64_x64/consts_db x64_x64/src_sym_exec_db x64_x64/src.insn.usedef.preprocessed x64_x64/src.insn.types.preprocessed x64_x64/fb.trans.tab
+
+distclean: clean
+	git clean -df
+
+.PHONY: all clean distclean
